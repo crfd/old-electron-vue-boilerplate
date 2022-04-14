@@ -1,4 +1,4 @@
-# Commands to start on workspace startup
+
 tasks:
   - init: npm install
     command: npm run dev
@@ -6,3 +6,10 @@ tasks:
 ports:
   - port: 3000
     onOpen: open-preview
+
+vscode:
+  extensions:
+    - dbaeumer.vscode-eslint
+    - EditorConfig.EditorConfig
+    - esbenp.prettier-vscode
+    - johnsoncodehk.volar
