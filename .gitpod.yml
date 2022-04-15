@@ -13,3 +13,4 @@ vscode:
     - johnsoncodehk.volar
     - antfu.vite
     - syler.sass-indented
+    - cschleiden.vscode-github-actions
