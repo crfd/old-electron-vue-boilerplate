@@ -12,3 +12,4 @@ vscode:
     - esbenp.prettier-vscode
     - johnsoncodehk.volar
     - antfu.vite
+    - syler.sass-indented
