@@ -30,12 +30,24 @@ jobs:
           # release the app after building
           release: ${{ startsWith(github.ref, 'refs/tags/v') }}
 
-      - name: machine ls $GITHUB_EVENT_PATH
-        run: 'ls -la $GITHUB_EVENT_PATH'
+      - name: Move Distribution Files
+        shell: bash
+        run: ./move-dist.sh
 
-      - name: machine ls $GITHUB_WORKSPACE
-        run: 'ls -la $GITHUB_WORKSPACE'
+      - name: Upload Linux Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: my-app-linux
+          path: dist-linux
 
-      - name: machine ls $HOME
-        working-directory: '.'
-        run: 'ls -la $HOME'
+      - name: Upload Mac Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: my-app-mac
+          path: dist-mac
+
+      - name: Upload Win Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: my-app-win
+          path: dist-win
