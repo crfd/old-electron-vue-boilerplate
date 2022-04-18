@@ -8,14 +8,17 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:for:electron": "cross-env ELECTRON=true vite build",
     "serve": "vite preview",
+    "lint": "echo \"No linting configured\"",
+    "test": "echo \"No testing configured\"",
     "electron": "wait-on tcp:3000 && cross-env IS_DEV=true electron .",
     "electron:pack": "electron-builder --dir",
     "electron:dev": "concurrently -k \"cross-env BROWSER=none npm run dev\" \"npm run electron\"",
     "electron:builder": "electron-builder",
-    "build:for:electron": "cross-env ELECTRON=true vite build",
+    "electron:publisher": "electron-builder --publish always",
     "app:build": "npm run build:for:electron && npm run electron:builder",
-    "lint": "echo \"No linting configured\""
+    "app:publish": "npm run build:for:electron && npm run electron:publisher"
   },
   "keywords": [],
   "author": {

@@ -1,6 +1,6 @@
 name: 'Build/release'
 
-on: 
+on:
   - push
   - workflow_dispatch
 
@@ -33,7 +33,7 @@ jobs:
         run: npm ci
 
       - name: 'Build Electron App'
-        run: npm run app:build
+        run: npm run app:publish
 
       - name: Move Distribution Files
         run: sh ./move-dist.sh
