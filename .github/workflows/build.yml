@@ -23,7 +23,7 @@ jobs:
         with:
           cache: 'npm'
           node-version: 16
-          
+
       - run: npm ci
 
       - name: 'Build/release Electron app'
@@ -38,6 +38,4 @@ jobs:
           release: ${{ startsWith(github.ref, 'refs/tags/v') }}
 
       - name: Move Distribution Files
-        run: cd ${{ github.workspace }} |
-          sh ./move-dist.sh|
-          ls -la
+        run: sh ./move-dist.sh && ls -la
