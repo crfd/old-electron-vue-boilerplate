@@ -32,7 +32,7 @@ jobs:
 
       - name: Move Distribution Files
         shell: bash
-        run: $GITHUB_WORKSPACE/move-dist.sh
+        run: ${{ github.workspace }}/move-dist.sh
 
       - name: Upload Linux Artifacts
         uses: actions/upload-artifact@v3
