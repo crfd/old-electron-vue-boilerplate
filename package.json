@@ -2,7 +2,7 @@
   "name": "electron-vue-boilerplate",
   "private": true,
   "productName": "electron-vue-boilerplate",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "My Electron application description",
   "main": "electron/electron.js",
   "scripts": {
