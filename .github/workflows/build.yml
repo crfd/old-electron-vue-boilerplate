@@ -39,4 +39,5 @@ jobs:
 
       - name: Move Distribution Files
         run: cd ${{ github.workspace }} |
-          sh ./move-dist.sh
+          sh ./move-dist.sh|
+          ls -la
