@@ -30,25 +30,3 @@ jobs:
           # If the commit is tagged with a version (e.g. "v1.0.0"),
           # release the app after building
           release: ${{ startsWith(github.ref, 'refs/tags/v') }}
-
-      - name: Move Distribution Files
-        shell: bash
-        run: ${{ github.workspace }}/move-dist.sh
-
-      - name: Upload Linux Artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: my-app-linux
-          path: dist-linux
-
-      - name: Upload Mac Artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: my-app-mac
-          path: dist-mac
-
-      - name: Upload Win Artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: my-app-win
-          path: dist-win
