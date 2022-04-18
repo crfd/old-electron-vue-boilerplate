@@ -33,6 +33,9 @@
     "mac": {
       "category": "public.app-category.utilities"
     },
+    "linux": {
+      "target": "AppImage"
+    },
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true
