@@ -44,21 +44,21 @@ jobs:
 
       - name: Upload Linux Artifacts
         uses: actions/upload-artifact@v3
-        if: ${{ matrix.os }} == 'linux-latest'
+        if: matrix.os == 'linux-latest'
         with:
           name: linxu-${{ github.sha }}
           path: dist-linux
 
       - name: Upload Mac Artifacts
         uses: actions/upload-artifact@v3
-        if: ${{ matrix.os }} == 'macos-latest'
+        if: matrix.os == 'macos-latest'
         with:
           name: macos-${{ github.sha }}
           path: dist-mac
 
       - name: Upload Win Artifacts
         uses: actions/upload-artifact@v3
-        if: ${{ matrix.os }} == 'windows-latest'
+        if: matrix.os == 'windows-latest'
         with:
           name: windows-${{ github.sha }}
           path: dist-win
