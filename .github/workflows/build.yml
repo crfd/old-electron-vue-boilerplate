@@ -40,6 +40,8 @@ jobs:
       - name: Move Distribution Files
         run: sh ./move-dist.sh && ls -la
 
+      - run: echo ${{ matrix.os }}
+
       - name: Upload Linux Artifacts
         uses: actions/upload-artifact@v3
         if: ${{ matrix.os }} == 'linux-latest'
